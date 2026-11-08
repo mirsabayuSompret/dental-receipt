@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="4dp">
+
+    <EditText
+        android:id="@+id/etProcedure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:hint="Procedure"
+        android:importantForAutofill="no"
+        android:inputType="textCapSentences"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="3"
+        android:hint="Price"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnRemove"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        android:text="✕"
+        android:textColor="#C62828"
+        tools:ignore="HardcodedText" />
+</LinearLayout>
