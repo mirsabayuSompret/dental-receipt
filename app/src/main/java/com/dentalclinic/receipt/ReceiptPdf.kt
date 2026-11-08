@@ -79,8 +79,8 @@ object ReceiptPdf {
         val fill = Paint(Paint.ANTI_ALIAS_FLAG)
         val th = h * 0.58f
         val tw = w * 0.36f
-        fun tooth(left: Float, top: Float, color: Int) {
-            fill.color = color
+        fun tooth(left: Float, top: Float, toothColor: Int) {
+            fill.color = toothColor
             c.drawRoundRect(left, top, left + tw, top + th, tw * 0.45f, tw * 0.45f, fill)
             fill.color = Color.rgb(60, 40, 40)
             c.drawCircle(left + tw * 0.3f, top + th * 0.5f, 1.6f, fill)
