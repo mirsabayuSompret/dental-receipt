@@ -15,19 +15,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dental Clinic Receipt"
+            android:text="Praktek Dokter Gigi drg. Qisty Aulia"
             android:textSize="22sp"
             android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etClinic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Clinic name"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"
-            android:text="Dental Clinic" />
 
         <EditText
             android:id="@+id/etPatient"

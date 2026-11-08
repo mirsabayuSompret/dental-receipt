@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var list: LinearLayout
     private lateinit var tvTotal: TextView
     private lateinit var etPatient: EditText
-    private lateinit var etClinic: EditText
     private var pendingPrint = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         list = findViewById(R.id.listProcedures)
         tvTotal = findViewById(R.id.tvTotal)
         etPatient = findViewById(R.id.etPatient)
-        etClinic = findViewById(R.id.etClinic)
 
         findViewById<Button>(R.id.btnAdd).setOnClickListener { addRow() }
         findViewById<Button>(R.id.btnPrint).setOnClickListener { print() }
@@ -95,9 +93,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         try {
-            val uri = ReceiptPdf.save(
-                this, etClinic.text.toString().trim().ifEmpty { "Dental Clinic" }, patient, filled
-            )
+            val uri = ReceiptPdf.save(this, patient, filled)
             Toast.makeText(this, "Saved to Downloads", Toast.LENGTH_LONG).show()
             startActivity(
                 Intent.createChooser(
