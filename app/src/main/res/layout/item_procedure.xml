@@ -3,38 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:paddingTop="4dp">
+    android:orientation="vertical"
+    android:paddingTop="12dp"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etProcedure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Jenis perawatan"
+            android:importantForAutofill="no"
+            android:inputType="textCapSentences" />
+
+        <Button
+            android:id="@+id/btnRemove"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:text="✕"
+            android:textColor="#C62828" />
+    </LinearLayout>
 
     <EditText
-        android:id="@+id/etProcedure"
-        android:layout_width="0dp"
+        android:id="@+id/etDiagnosis"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
-        android:hint="Procedure"
+        android:hint="Diagnosa"
         android:importantForAutofill="no"
-        android:inputType="textCapSentences"
-        tools:ignore="HardcodedText" />
+        android:inputType="textCapSentences" />
 
     <EditText
         android:id="@+id/etPrice"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_weight="3"
-        android:hint="Price"
+        android:hint="Harga (Rp)"
         android:importantForAutofill="no"
-        android:inputType="number"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/btnRemove"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:minWidth="0dp"
-        android:text="✕"
-        android:textColor="#C62828"
-        tools:ignore="HardcodedText" />
+        android:inputType="number" />
 </LinearLayout>

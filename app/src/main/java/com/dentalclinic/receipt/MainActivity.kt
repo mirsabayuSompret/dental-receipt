@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 list.removeView(row)
             } else {
                 row.findViewById<EditText>(R.id.etProcedure).text.clear()
+                row.findViewById<EditText>(R.id.etDiagnosis).text.clear()
                 row.findViewById<EditText>(R.id.etPrice).text.clear()
             }
             updateTotal()
@@ -63,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         (0 until list.childCount).map { list.getChildAt(it) }.map { row ->
             ReceiptItem(
                 row.findViewById<EditText>(R.id.etProcedure).text.toString().trim(),
+                row.findViewById<EditText>(R.id.etDiagnosis).text.toString().trim(),
                 row.findViewById<EditText>(R.id.etPrice).text.toString().toLongOrNull() ?: 0L
             )
         }
@@ -73,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun print() {
         val patient = etPatient.text.toString().trim()
-        val filled = items().filter { it.name.isNotEmpty() || it.price > 0 }
+        val filled = items().filter { it.name.isNotEmpty() || it.diagnosis.isNotEmpty() || it.price > 0 }
         if (patient.isEmpty()) {
             etPatient.error = "Enter patient name"
             return
